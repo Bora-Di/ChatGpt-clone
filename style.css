@@ -17,8 +17,35 @@
     --outgoing-chat-border: #343541;
     --incoming-chat-border: #444654;
 }
+.light-mode {
+    --text-color: #343541;
+    --icon-color: #9f9faf;
+    --icon-hover-bg:#f1f1f3;
+    --placeholder-color: #9f9f9f;
+    --outgoing-chat-bg: #fff;
+    --incoming-chat-bg: #f7f7f8;
+    --outgoing-chat-border: #ffff;
+    --incoming-chat-border: #d9d9e3;
+}
+
 body{
     background: var(--outgoing-chat-bg);
+}
+.chat-container{
+    max-height: 100vh;
+    padding-bottom: 150px;
+    overflow-y: auto;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar{
+    width: 6px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-track{
+    background: var(--incoming-chat-bg);
+    border-radius: 25px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-thumb{
+    background: var(--icon-color);
+    border-radius: 25px;
 }
 .chat-container .chat{
     padding: 25px 10px;
@@ -57,6 +84,7 @@ body{
     width: 35px;
     height: 35px;
     object-fit: cover;
+    align-self: flex-start;
     background-color: #ffff;
     border-radius: 50%;
 }
